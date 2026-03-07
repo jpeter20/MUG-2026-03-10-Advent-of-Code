@@ -1,0 +1,50 @@
+[project]
+name = "secret-entrance"
+version = "0.1.0"
+description = "Advent of Code 2025 Day 1 in Python"
+readme = "README.md"
+authors = [
+    { name = "Wolf", email = "Wolf@zv.cx" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "typer>=0.15.1",
+]
+
+[project.scripts]
+day1 = "secret_entrance:app"
+
+[tool.ruff.lint]
+select = [
+    "D", # Docstrings
+    "E", # PEP 8 errors
+    "E4", # PEP8 Error codes: Imports, module-level imports
+    "E7", # Syntax errors, possible syntax errors
+    "E9", # Syntax errors in general
+    "F", # Pyflakes
+    "I", # Import sorting
+    "W6",  # Other warnings, like invalid escape sequences
+]
+ignore = [
+    "D203",  # Ignore conflicting docstring rule
+    "D204",  # Ignore another conflicting docstring rule
+    "D212",  # Multi-line docstring starts on its own line
+    "E501",  # Allow long lines for now
+    "F401",  # Ignore unused imports (in case they are used only in an import)
+    "F841",  # Ignore unused variables (in case they are used only in an import)
+]
+
+[build-system]
+requires = ["uv_build>=0.9.13,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.35.0",
+    "ipdb>=0.13.13",
+    "ipython>=9.8.0",
+    "pre-commit>=4.5.0",
+    "pyrefly>=0.44.0",
+    "pytest>=9.0.1",
+    "ruff>=0.14.7",
+]
